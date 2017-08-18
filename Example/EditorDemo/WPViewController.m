@@ -72,6 +72,9 @@
 }
 
 #pragma mark - WPEditorViewControllerDelegate
+- (void)editorTrackStat:(WPEditorStat)stat {
+    DDLogInfo(@"editorTrackStat");
+}
 
 - (void)editorDidBeginEditing:(WPEditorViewController *)editorController
 {

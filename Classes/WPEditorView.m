@@ -83,8 +83,8 @@ static NSString* const WPEditorViewWebViewContentSizeKey = @"contentSize";
 		CGRect childFrame = frame;
 		childFrame.origin = CGPointZero;
 		
-        [self createSourceTitleViewWithFrame: childFrame];
-        [self createSourceDividerViewWithFrame:CGRectMake(0.0f, CGRectGetMaxY(self.sourceViewTitleField.frame), CGRectGetWidth(childFrame), 1.0f)];
+//        [self createSourceTitleViewWithFrame: childFrame];
+//        [self createSourceDividerViewWithFrame:CGRectMake(0.0f, CGRectGetMaxY(self.sourceViewTitleField.frame), CGRectGetWidth(childFrame), 1.0f)];
         CGRect sourceViewFrame = CGRectMake(0.0f,
                                             CGRectGetMaxY(self.sourceContentDividerView.frame),
                                             CGRectGetWidth(childFrame),
