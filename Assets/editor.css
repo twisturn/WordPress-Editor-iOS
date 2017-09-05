@@ -67,12 +67,15 @@ hr {
 
 img {
     height: auto;
-    margin: 0px 0 0px 0;
     min-width: 30px;
     min-height: 30px;
     max-width: 100%;
     opacity:1;
+    margin:0 auto!important;
+    display:block!important;
 }
+
+
 
 img.alignright {
     display: inline;
@@ -137,6 +140,8 @@ span.img_container {
     position: relative;
     display: inline-block;
     -webkit-user-select: none;
+    width: 100%;
+/*    vertical-align:center;*/
 }
 
 span.img_container.failed {

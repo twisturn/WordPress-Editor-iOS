@@ -7,6 +7,7 @@
 #import "WPEditorField.h"
 #import "WPEditorView.h"
 #import "WPImageMetaViewController.h"
+#import "LCPHTMLViewController.h"
 
 @interface WPViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, WPImageMetaViewControllerDelegate>
 @property(nonatomic, strong) NSMutableDictionary *mediaAdded;
@@ -28,6 +29,12 @@
                                                                             action:@selector(editTouchedUpInside)];
     self.mediaAdded = [NSMutableDictionary dictionary];
     self.videoPressCache = [[NSCache alloc] init];
+}
+- (IBAction)nextClicked:(id)sender {
+    NSLog(@"nextClicked======");
+//    LCPHTMLViewController *vc = [[LCPHTMLViewController alloc] init];
+//    vc.htmlStr = self.bodyText;
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)customizeAppearance

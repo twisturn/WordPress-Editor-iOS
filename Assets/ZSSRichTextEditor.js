@@ -805,33 +805,78 @@ ZSSEditor.insertImage = function(url, alt) {
  *                                      that a remote URL can be used here too, since this method
  *                                      does not check for that.  It would be a mistake.
  */
-ZSSEditor.insertLocalImage = function(imageNodeIdentifier, localImageUrl) {
+//ZSSEditor.insertLocalImage = function(imageNodeIdentifier, localImageUrl) {
+//
+//    if (window.getSelection) {
+//        sel = window.getSelection();
+//        if (sel.getRangeAt && sel.rangeCount) {
+//            var progressIdentifier = this.getImageProgressIdentifier(imageNodeIdentifier);
+//
+//            var span = document.createElement("span");
+//            span.id = this.getImageContainerIdentifier(imageNodeIdentifier);
+//            span.className = "img_container";
+//            span.style.width="100%";
+////            span.style.textAlign="center";
+//
+//            var progress = document.createElement("progress");
+//            progress.id = progressIdentifier;
+//            progress.value = 0;
+//            progress.className = "wp_media_indicator";
+//            
+//
+//            var image = document.createElement("img");
+//            image.setAttribute("data-wpid", imageNodeIdentifier);
+//            image.src = localImageUrl;
+//            image.alt = "";
+//            span.appendChild(progress);
+//            span.appendChild(image);
+//        
+//
+//            range = sel.getRangeAt(0);
+//            range.insertNode(span);
+//            
+//            var img=document.getElementsByTagName("img")[0];
+//            var imageLeft=window.getComputedStyle(img).marginLeft;
+//            var imageWidth=window.getComputedStyle(img).width;
+//            progress.style.left=imageLeft;
+//            progress.style.width=imageWidth;
+//            image.style.width=imageWidth;
+//
+//            this.sendEnabledStyles();
+//        }
+//    }
+//};
 
+ZSSEditor.insertLocalImage = function(imageNodeIdentifier, localImageUrl) {
+    
     if (window.getSelection) {
         sel = window.getSelection();
         if (sel.getRangeAt && sel.rangeCount) {
             var progressIdentifier = this.getImageProgressIdentifier(imageNodeIdentifier);
-
+            
+            
             var span = document.createElement("span");
             span.id = this.getImageContainerIdentifier(imageNodeIdentifier);
             span.className = "img_container";
-
+            
             var progress = document.createElement("progress");
             progress.id = progressIdentifier;
             progress.value = 0;
             progress.className = "wp_media_indicator";
-
+            
             var image = document.createElement("img");
             image.setAttribute("data-wpid", imageNodeIdentifier);
             image.src = localImageUrl;
             image.alt = "";
-
+            
             span.appendChild(progress);
             span.appendChild(image);
-
+         
             range = sel.getRangeAt(0);
             range.insertNode(span);
-
+            
+            
+            
             this.sendEnabledStyles();
         }
     }
