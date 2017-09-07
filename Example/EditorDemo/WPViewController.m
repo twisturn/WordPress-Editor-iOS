@@ -8,6 +8,7 @@
 #import "WPEditorView.h"
 #import "WPImageMetaViewController.h"
 #import "LCPHTMLViewController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface WPViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, WPImageMetaViewControllerDelegate>
 @property(nonatomic, strong) NSMutableDictionary *mediaAdded;
@@ -451,7 +452,7 @@
         //        [timer invalidate];
         //    }
         if (progress.fractionCompleted >= 1) {
-            [self.editorView replaceLocalImageWithRemoteImage:[[NSURL fileURLWithPath:progress.userInfo[@"url"]] absoluteString] uniqueId:imageID mediaId:[@(arc4random()) stringValue]];
+            [self.editorView replaceLocalImageWithRemoteImage:@"fksdjfj" uniqueId:imageID mediaId:[@(arc4random()) stringValue]];
             [timer invalidate];
         }
         return;
@@ -485,6 +486,15 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [self.navigationController dismissViewControllerAnimated:YES completion:^{
+        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+//        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+//        __block NSURL *URL;
+//        [library writeImageToSavedPhotosAlbum:image.CGImage orientation:(ALAssetOrientation)image.imageOrientation completionBlock:^(NSURL *assetURL, NSError *error) {
+//            if (assetURL) {
+//                URL = [assetURL copy];
+//            }
+//        }];
+        
         NSURL *assetURL = info[UIImagePickerControllerReferenceURL];
         [self addAssetToContent:assetURL];
     }];
