@@ -256,6 +256,10 @@ static NSString* const kWPEditorFieldJavascriptTrue = @"true";
 }
 
 #pragma mark - Focus
+//by zhoujie
+- (void)focusPoint {
+    [self.webView stringByEvaluatingJavaScriptFromString:@"$('#zss_field_content')[0].focus();"];
+}
 
 - (void)focus
 {

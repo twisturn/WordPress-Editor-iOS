@@ -105,7 +105,7 @@
     [super viewDidLoad];	
     self.isFirstSetupComplete = NO;
     self.didFinishLoadingEditor = NO;
-    [self createToolbarView];
+//    [self createToolbarView]; //by zhoujie
     [self buildTextViews];
     [self customizeAppearance];
 }

@@ -100,6 +100,7 @@
     NSString *htmlParam = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     [self setTitleText:@"I'm editing a post!"];
     [self setBodyText:htmlParam];
+    [self.editorView.contentField focusPoint];
 }
 
 - (BOOL)editorShouldDisplaySourceView:(WPEditorViewController *)editorController

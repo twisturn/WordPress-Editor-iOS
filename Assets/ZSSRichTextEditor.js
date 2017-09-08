@@ -2702,6 +2702,7 @@ ZSSField.prototype.handleTapEvent = function(e) {
             
             // If we're not currently editing just return. No need to apply styles
             // or acknowledge the tap
+            return;//by zhoujie
             if ( this.wrappedObject.attr('contenteditable') != "true" ) {
                 return;
             }

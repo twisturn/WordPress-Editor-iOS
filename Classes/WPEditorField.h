@@ -14,6 +14,10 @@
 
 #pragma mark - Initializers
 
+//by zhoujie 获取焦点
+- (void)focusPoint;
+
+
 /**
  *  @brief      Initializes the field with the specified HTML node id.
  *
