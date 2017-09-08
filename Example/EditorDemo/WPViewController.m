@@ -80,6 +80,10 @@
 }
 
 #pragma mark - WPEditorViewControllerDelegate
+- (void)editorViewDidFinishLoading:(WPEditorView*)editorView {
+    NSLog(@"111");
+}
+
 - (void)editorTrackStat:(WPEditorStat)stat {
     DDLogInfo(@"editorTrackStat");
 }
