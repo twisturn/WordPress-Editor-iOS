@@ -49,7 +49,7 @@
     // Remove this when #79 is resolved.
 //    [WPFontManager notoRegularFontOfSize:16.0];
 //    [WPFontManager loadNotoFontFamily];
-
+    self.titlePlaceholderText = @"fsdf";
 //    self.placeholderColor = [WPStyleGuide grey];
 //    self.editorView.sourceViewTitleField.font = [WPFontManager notoBoldFontOfSize:24.0];
 //    self.editorView.sourceContentDividerView.backgroundColor = [WPStyleGuide greyLighten30];

@@ -277,7 +277,7 @@
         
         // Default placeholder text
         self.titlePlaceholderText = NSLocalizedString(@"Post title",  @"Placeholder for the post title.");
-        self.bodyPlaceholderText = NSLocalizedString(@"Share your story here...", @"Placeholder for the post body.");
+        self.bodyPlaceholderText = NSLocalizedString(@"课程描述...", @"Placeholder for the post body.");
     }
 	
     [self.view addSubview:self.editorView];
