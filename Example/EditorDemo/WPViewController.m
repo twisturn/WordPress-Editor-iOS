@@ -224,26 +224,27 @@
                                                        preferredStyle:UIAlertControllerStyleActionSheet];
     }
     
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"
                                                            style:UIAlertActionStyleCancel
                                                          handler:^(UIAlertAction *action){}];
     [alertController addAction:cancelAction];
     
     if (!progress.cancelled){
-        UIAlertAction *stopAction = [UIAlertAction actionWithTitle:@"Stop Upload"
+        UIAlertAction *stopAction = [UIAlertAction actionWithTitle:@"停止上传"
                                                              style:UIAlertActionStyleDestructive
                                                            handler:^(UIAlertAction *action){
                                                                [weakSelf.editorView removeImage:weakSelf.selectedMediaID];
                                                            }];
         [alertController addAction:stopAction];
     } else {
-        UIAlertAction *removeAction = [UIAlertAction actionWithTitle:@"Remove Image"
+        //by zhoujie
+        UIAlertAction *removeAction = [UIAlertAction actionWithTitle:@"移除图片"
                                                                style:UIAlertActionStyleDestructive
                                                              handler:^(UIAlertAction *action){
                                                                  [weakSelf.editorView removeImage:weakSelf.selectedMediaID];
                                                              }];
         
-        UIAlertAction *retryAction = [UIAlertAction actionWithTitle:@"Retry Upload"
+        UIAlertAction *retryAction = [UIAlertAction actionWithTitle:@"重新上传"
                                                               style:UIAlertActionStyleDefault
                                                             handler:^(UIAlertAction *action){
                                                                 NSProgress * progress = [[NSProgress alloc] initWithParent:nil userInfo:@{@"imageID":self.selectedMediaID}];
@@ -451,11 +452,11 @@
     if (imageID) {
         [self.editorView setProgress:progress.fractionCompleted onImage:imageID];
         // Uncomment this code if you need to test a failed image upload
-        //    if (progress.fractionCompleted >= 0.15){
-        //        [progress cancel];
-        //        [self.editorView markImage:imageID failedUploadWithMessage:@"Failed"];
-        //        [timer invalidate];
-        //    }
+//            if (progress.fractionCompleted >= 0.15){
+//                [progress cancel];
+//                [self.editorView markImage:imageID failedUploadWithMessage:@"Failed"];
+//                [timer invalidate];
+//            }
         if (progress.fractionCompleted >= 1) {
             [self.editorView replaceLocalImageWithRemoteImage:@"fksdjfj" uniqueId:imageID mediaId:[@(arc4random()) stringValue]];
             [timer invalidate];

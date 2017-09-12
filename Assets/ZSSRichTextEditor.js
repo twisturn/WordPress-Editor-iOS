@@ -1015,7 +1015,7 @@ ZSSEditor.markImageUploadDone = function(imageNodeIdentifier, image, mediaID) {
 
     if (imageNode.length > 0) {
         imageNode.unwrap();
-        imageNode.wrap("<a href='" + image.src + "'></a>");
+//        imageNode.wrap("<a href='" + image.src + "'></a>");
         imageNode.removeClass("uploading");
         imageNode.removeAttr('data-wpid');
         imageNode.removeAttr("class");
